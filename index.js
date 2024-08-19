@@ -1,9 +1,16 @@
 #!/usr/bin/env node
-import { fileURLToPath } from "url";
-import { dirname } from "path";
-import cli from "./src/cli.js";
+import { program } from "commander";
+import { prompt } from "./lib/prompts.js";
+import { generateProject } from "./lib/projectGenerator.js";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+program
+	.version("1.0.0")
+	.description("Express.js project bootstrapper")
+	.option("-n, --name <name>", "Project name")
+	.option("-d, --directory <directory>", "Project directory")
+	.action(async (options) => {
+		const answers = await prompt(options);
+		await generateProject(answers);
+	});
 
-cli.parse(process.argv);
+program.parse(process.argv);
