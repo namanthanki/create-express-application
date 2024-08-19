@@ -5,7 +5,7 @@ import { generateProject } from "./lib/projectGenerator.js";
 
 program
 	.version("1.0.0")
-	.description("Express.js project bootstrapper")
+	.description("Express.js project scaffolding tool")
 	.option("-n, --name <name>", "Project name")
 	.option("-d, --directory <directory>", "Project directory")
 	.action(async (options) => {

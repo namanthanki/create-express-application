@@ -1,10 +1,10 @@
 {
-	"name": "express-bootstrapper",
+	"name": "create-express-application",
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
 	"bin": {
-		"express-bootstrapper": "./index.js"
+		"create-express-application": "./index.js"
 	},
 	"scripts": {
 		"start": "node index.js"
